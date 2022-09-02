@@ -1,23 +1,26 @@
 import React from "react";
+import "./Form.css"
 
-export const Form = ({ searchWord, onSubmit }) => {
-  const inputRef = React.useRef();
+export const Form = ({onSubmit, clear}) => {
+    const inputRef = React.useRef();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    onSubmit(inputRef.current.value);
-    console.log(inputRef.current.value);
-  };
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        onSubmit(inputRef.current.value);
+    };
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <input
-        ref={inputRef}
-        type="search"
-        className=""
-        placeholder="Wiki Search"
-      />
-      <button type="submit">search</button>
-    </form>
-  );
+    return (
+        <form className={"Form"} onSubmit={handleSubmit}>
+            <div className="innerForm">
+                <input
+                    ref={inputRef}
+                    type="search"
+                    className="Form-input"
+                    placeholder="Wiki Search..."
+                />
+                <button type="submit" className="Form-button Form-button-search">search</button>
+            </div>
+            <button className="Form-button Form-clear-button" onClick={clear}>Clear</button>
+        </form>
+    );
 };

@@ -2,15 +2,25 @@
   background-color: antiquewhite;
   max-width: 40rem;
   width: 100%;
-  height: calc(20%-2rem);
-  border-bottom: solid 2px rgba(92, 92, 92, 0.475);
+  border: solid 2px rgba(92, 92, 92, 0.475);
   border-radius: 0.5rem;
   padding: 1rem;
+}
+
+.Panel:hover {
+  background-color: white;
+  max-width: 40rem;
+  width: 100%;
+  border: solid 2px rgba(234, 68, 68, 0.47);
+}
+.Panel:active{
+  background-color: black;
 }
 
 .Panel-content {
   display: flex;
   justify-content: space-between;
+  gap:3rem;
 }
 
 .Panel-text {
