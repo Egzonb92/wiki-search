@@ -1,0 +1,15 @@
+.Header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  border-bottom: solid 0.2px white;
+}
+
+.Header-text {
+  margin-left: 4rem;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
