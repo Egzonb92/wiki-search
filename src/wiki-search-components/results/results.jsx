@@ -13,14 +13,17 @@ export const Results = ({searchWord, searchResults, setSearchResults}) => {
         }
         const [response, AbortCtrl] = fetchWiki(searchWord)
         response.then((data) => {
-            setSearchResults(data.query.pages);
+            if (!data) return <div>No data found</div>
+            setSearchResults(data);
             localStorage.setItem(
                 "Wiki-Search-Results",
-                JSON.stringify(data.query.pages)
+                JSON.stringify(data)
             );
-        });
+        }).catch((e) => {
+            return <div> No data found </div>
+        })
         return () => AbortCtrl.abort()
-    }, [searchWord]);
+    }, [searchWord, setSearchResults]);
 
     if (!searchResults) {
         return null;

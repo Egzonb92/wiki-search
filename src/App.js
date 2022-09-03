@@ -14,13 +14,22 @@ function App() {
     const handleSubmit = (newSearchWord) => {
         setSearchWord(newSearchWord);
     };
+
+    const clear  = () => {
+        setSearchResults(null);
+        setSearchWord("")
+        try{localStorage.removeItem("Wiki-Search-Results")}
+        catch (e){
+
+        }
+
+
+    }
     return (
         <div className="App">
             <Header/>
-            <div className="App-content">
-                <Form onSubmit={handleSubmit} clear={() => setSearchResults(null)}/>
+                <Form initialSearch={!searchResults} onSubmit={handleSubmit} clear={clear}/>
                 <Results searchWord={searchWord} searchResults={searchResults} setSearchResults={setSearchResults}/>
-            </div>
         </div>
     );
 }

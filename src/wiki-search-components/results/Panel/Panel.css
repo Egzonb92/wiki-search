@@ -1,5 +1,5 @@
 .Panel {
-  background-color: antiquewhite;
+  background-color: white;
   max-width: 40rem;
   width: 100%;
   border: solid 2px rgba(92, 92, 92, 0.475);
@@ -8,7 +8,7 @@
 }
 
 .Panel:hover {
-  background-color: white;
+  background-color: #e3dfdf;
   max-width: 40rem;
   width: 100%;
   border: solid 2px rgba(234, 68, 68, 0.47);
