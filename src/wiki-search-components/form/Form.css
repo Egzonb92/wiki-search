@@ -41,12 +41,19 @@
     border: 2px solid transparent;
     border-color: #1E4586;
     transition: 0.3s;
+
 }
 
 .Form-button:hover {
+
+    background-position: left;
     background-color: #1E4586;
     color: white;
     transition: 0.3s;
+}
+
+.Form-button:active {
+    background-color: #234f96;
 }
 
 .Form-button-search {

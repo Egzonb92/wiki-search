@@ -22,8 +22,6 @@ function App() {
         catch (e){
 
         }
-
-
     }
     return (
         <div className="App">
