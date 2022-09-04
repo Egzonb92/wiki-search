@@ -15,15 +15,14 @@ export const Form = ({initialSearch, onSubmit, clear}) => {
     }
     console.log(initialSearch?"Form":"Form.with.results")
     return (
-        <form className={"Form"} onSubmit={handleSubmit} style={{padding: initialSearch?"20% 0":"0"}}>
+        <form className={"Form"} onSubmit={handleSubmit} style={{padding: initialSearch?"20% 1rem":"0"}}>
             <div className="Form-search-container">
                 <input
                     ref={inputRef}
-                    type="search"
                     className="Form-input"
                     placeholder="Wiki Search..."
                 />
-                <button type="submit" className="Form-button Form-button-search">search</button>
+                <button type="submit" className="Form-button Form-button-search">Search</button>
             </div>
             <button className="Form-button Form-clear-button" onClick={clearSearch}>Clear</button>
         </form>

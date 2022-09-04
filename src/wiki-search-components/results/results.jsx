@@ -12,6 +12,7 @@ const resultStates = {
 }
 
 export const Results = ({searchWord, searchResults, setSearchResults}) => {
+
     let results = null
     const [state, setState] = React.useState(resultStates.initialState)
 

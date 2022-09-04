@@ -1,39 +1,57 @@
 .Form {
+    height: 3rem;
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     vertical-align: top;
-    gap: 2rem;
-    padding: 0;
+    gap: 1rem;
+    padding: 0 1rem 0 1rem;
     transition: padding 0.4s;
 }
 .Form-search-container{
     display: flex;
     flex-wrap: nowrap;
     transition: padding 0.4s;
+    padding: 0
 }
 
 
 .Form-input {
-    height: 3rem;
+    box-sizing: border-box;
+    height:100%;
     font-size: 16px;
     border-radius: 0.4rem 0 0 0.4rem;
-    padding-left: 1rem
-
+    border: 2px solid #1E4586;
+    border-right: 0;
+    padding-left: 1rem;
+    text-overflow: ellipsis;
+    max-width: 35rem;
+    width: 100%;
+}
+.Form-input:focus{
+    outline: none;
 }
 
 .Form-button {
-    height: 3rem;
+    height:100%;
+    color: #1e4586;
     vertical-align: top;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    background-color: #FFF;
+    border: 2px solid transparent;
+    border-color: #1E4586;
+    transition: 0.3s;
 }
 
 .Form-button:hover {
-
+    background-color: #1E4586;
+    color: white;
+    transition: 0.3s;
 }
 
 .Form-button-search {
     border-radius: 0 0.4rem 0.4rem 0;
+    border-left: 0;
 }
 
 .Form-clear-button {

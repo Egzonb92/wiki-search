@@ -2,19 +2,21 @@
   background-color: white;
   max-width: 40rem;
   width: 100%;
-  border: solid 2px rgba(92, 92, 92, 0.475);
+  border: solid 2px #1e4586;
   border-radius: 0.5rem;
   padding: 1rem;
+  transition: 0.3s;
 }
 
 .Panel:hover {
-  background-color: #e3dfdf;
+  background-color: #1e4586;
+  color:white;
   max-width: 40rem;
   width: 100%;
-  border: solid 2px rgba(234, 68, 68, 0.47);
+  transition: 0.3s;
 }
 .Panel:active{
-  background-color: black;
+  background-color: #234f96;
 }
 
 .Panel-content {
