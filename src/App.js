@@ -11,10 +11,6 @@ function App() {
         JSON.parse(localStorage.getItem("Wiki-Search-Results")) ?? null
     );
 
-    React.useEffect(()=> {
-        localStorage.getItem("Wiki-Search-Results", JSON.stringify(searchResults))
-    }, searchResults)
-
     const handleSubmit = (newSearchWord) => {
         setSearchWord(newSearchWord);
     };

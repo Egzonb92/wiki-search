@@ -28,6 +28,7 @@ export const Results = ({searchWord, searchResults, setSearchResults}) => {
                 return
             }
             const res = data.query.pages;
+            localStorage.setItem("Wiki-Search-Results", JSON.stringify(res))
             setSearchResults(res);
             setState(resultStates.success)
 
@@ -54,17 +55,12 @@ export const Results = ({searchWord, searchResults, setSearchResults}) => {
         )
     }
 
-    console.log(state, "hey")
 
     return (
         <div className="Results">
             {results ? results.map((i, j) => {
                 return (
-                    <Panel
-                        key={j}
-                        onClick={() => window.location.href = `https://en.wikipedia.org/?curid=${i.pageid}`}
-                        searchResult={i}
-                    />
+                    <Panel key={j} searchResult={i}/>
                 );
             }) : null}
             {state === resultStates.noResults ? <div>There were no results matching {searchWord}</div> : null}

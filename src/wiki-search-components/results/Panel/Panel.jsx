@@ -7,12 +7,13 @@ export const Panel = ({searchResult, onClick}) => {
     }
 
     const title = searchResult.title;
+    const pageid = searchResult.pageid;
     const summary = searchResult.extract;
     const image = searchResult.thumbnail;
 
 
     return (
-        <div className="Panel" onClick={onClick}>
+        <div className="Panel" onClick={()=> window.location.href = `https://en.wikipedia.org/?curid=${pageid}`}>
             <div className="Panel-content">
                 <div className="Panel-text">
                     <div className="Panel-text-header">{title}</div>
