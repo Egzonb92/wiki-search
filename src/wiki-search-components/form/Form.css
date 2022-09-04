@@ -5,11 +5,12 @@
     vertical-align: top;
     gap: 2rem;
     padding: 0;
+    transition: padding 0.4s;
 }
 .Form-search-container{
     display: flex;
     flex-wrap: nowrap;
-
+    transition: padding 0.4s;
 }
 
 

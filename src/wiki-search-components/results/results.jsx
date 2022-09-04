@@ -4,7 +4,6 @@ import {Panel} from "./Panel/Panel";
 import "./results.css";
 
 
-
 const resultStates = {
     initialState: "initialState",
     success: "success",
@@ -34,17 +33,18 @@ export const Results = ({searchWord, searchResults, setSearchResults}) => {
 
 
         }).catch((e) => {
-            console.log("hey", e)
-            console.log(AbortCtrl.signal)
             setSearchResults(null)
-            setState(resultStates.error)
+            if (AbortCtrl.signal.aborted) {
+                setState(resultStates.initialState)
+            } else {
+                setState(resultStates.error)
+            }
         })
         return () => AbortCtrl.abort()
     }, [searchWord, setSearchResults]);
 
 
-
-    if (searchResults){
+    if (searchResults) {
         results = Array(5).fill(null)
         Object.entries(searchResults)?.forEach(
             keyVal => {
@@ -58,7 +58,7 @@ export const Results = ({searchWord, searchResults, setSearchResults}) => {
 
     return (
         <div className="Results">
-            {results?results.map((i, j) => {
+            {results ? results.map((i, j) => {
                 return (
                     <Panel
                         key={j}
@@ -66,9 +66,9 @@ export const Results = ({searchWord, searchResults, setSearchResults}) => {
                         searchResult={i}
                     />
                 );
-            }):null}
-            {state===resultStates.noResults?<div>There were no results matching {searchWord}</div>:null}
-            {state===resultStates.error?<div>An error has accured.</div>:null}
+            }) : null}
+            {state === resultStates.noResults ? <div>There were no results matching {searchWord}</div> : null}
+            {state === resultStates.error ? <div>An error has accured.</div> : null}
         </div>
     );
 };
