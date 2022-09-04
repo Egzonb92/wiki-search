@@ -15,7 +15,7 @@ export const Form = ({initialSearch, onSubmit, clear}) => {
     }
     console.log(initialSearch?"Form":"Form.with.results")
     return (
-        <form className={"Form"} onSubmit={handleSubmit} style={{padding: initialSearch?"20% 1rem":"0"}}>
+        <form className={"Form"} onSubmit={handleSubmit} style={{padding: initialSearch?"20% 1rem 0":"0"}}>
             <div className="Form-search-container">
                 <input
                     ref={inputRef}

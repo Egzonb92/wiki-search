@@ -64,8 +64,8 @@ export const Results = ({searchWord, searchResults, setSearchResults}) => {
                     <Panel key={j} searchResult={i}/>
                 );
             }) : null}
-            {state === resultStates.noResults ? <div>There were no results matching {searchWord}</div> : null}
-            {state === resultStates.error ? <div>An error has accured.</div> : null}
+            {state === resultStates.noResults ? <div style={{color:"white"}}>There were no results matching '{searchWord}'</div> : null}
+            {state === resultStates.error ? <div style={{color:"white"}}>An error has accured.</div> : null}
         </div>
     );
 };
