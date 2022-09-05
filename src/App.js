@@ -18,7 +18,8 @@ export const Flie = () => {
             position:"absolute",
             filter: "brightness(1.75)",
             top:`${y}vh`,
-            left:`${x}vw`
+            left:`${x}vw`,
+            transition:"all 0.2s"
 
         }
         } src={flie}/>
